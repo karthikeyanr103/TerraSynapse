@@ -123,7 +123,7 @@ def create_or_update_metadata(local_dir, handle):
                 "init",
                 "-p",
                 str(local_dir),
-                '--dir-mode'
+                '--dir-mode zip',
             ]
         )
 
@@ -189,6 +189,7 @@ def main():
             "du",
             "-sh",
             str(local_dir),
+            '--dir-mode zip'
         ]
     )
 
@@ -214,6 +215,7 @@ def main():
                 str(local_dir),
                 "-m",
                 args.version_notes,
+                '--dir-mode zip'
             ]
         )
 
@@ -232,6 +234,7 @@ def main():
                 "create",
                 "-p",
                 str(local_dir),
+                '--dir-mode zip',
             ]
         )
 
