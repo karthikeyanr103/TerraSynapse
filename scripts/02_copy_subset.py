@@ -48,29 +48,36 @@ def parse_args():
     return parser.parse_args()
 
 
-def resolve_patch_root(source_root, first_patch_name, label):
-    """Return the directory that directly contains the requested patch folders."""
+def detect_grouping_depth(source_root, first_patch_name, label):
+    """Detect whether patches are direct or grouped below an acquisition folder."""
     direct_patch = source_root / first_patch_name
     if direct_patch.is_dir():
-        return source_root
+        print(f"Detected flat {label} patch layout under {source_root}")
+        return 0
 
-    print(
-        f"{label} patch {first_patch_name!r} is not directly inside {source_root}."
-        " Searching nested directories ..."
-    )
-    matches = (
-        path for path in source_root.rglob(first_patch_name) if path.is_dir()
-    )
-    first_match = next(matches, None)
-    if first_match is None:
-        raise FileNotFoundError(
-            f"Could not find {label} patch folder {first_patch_name!r} anywhere "
-            f"under {source_root}. Check the manifest and extracted dataset."
-        )
+    name_parts = first_patch_name.split("_")
+    for trailing_parts in range(1, min(8, len(name_parts))):
+        group_name = "_".join(name_parts[:-trailing_parts])
+        grouped_patch = source_root / group_name / first_patch_name
+        if grouped_patch.is_dir():
+            print(
+                f"Detected grouped {label} layout: "
+                f"{source_root}/<acquisition>/<patch>"
+            )
+            return trailing_parts
 
-    resolved_root = first_match.parent
-    print(f"Resolved {label} patch root: {resolved_root}")
-    return resolved_root
+    raise FileNotFoundError(
+        f"Could not resolve {label} patch folder {first_patch_name!r} under "
+        f"{source_root}. Check the manifest and extracted dataset."
+    )
+
+
+def source_patch_path(source_root, patch_name, trailing_parts):
+    """Build a patch path using the layout detected from the first manifest row."""
+    if trailing_parts == 0:
+        return source_root / patch_name
+    group_name = "_".join(patch_name.split("_")[:-trailing_parts])
+    return source_root / group_name / patch_name
 
 
 def main():
@@ -104,13 +111,17 @@ def main():
     if df.empty:
         raise ValueError(f"Manifest contains no rows: {manifest}")
 
-    src_s1 = resolve_patch_root(src_s1, str(df.iloc[0]["s1_name"]), "S1")
-    src_s2 = resolve_patch_root(src_s2, str(df.iloc[0]["s2v1_name"]), "S2")
+    s1_grouping = detect_grouping_depth(
+        src_s1, str(df.iloc[0]["s1_name"]), "S1"
+    )
+    s2_grouping = detect_grouping_depth(
+        src_s2, str(df.iloc[0]["s2v1_name"]), "S2"
+    )
 
     print(f"Copying {len(df)} SAR (S1) folders ...")
     missing_s1 = 0
     for s1_name in tqdm(df["s1_name"], desc="S1 folders", unit="patch"):
-        src = src_s1 / s1_name
+        src = source_patch_path(src_s1, s1_name, s1_grouping)
         dst = dst_s1 / s1_name
         if not src.exists():
             missing_s1 += 1
@@ -121,7 +132,7 @@ def main():
     print(f"\nCopying {len(df)} Multispectral (S2) folders ...")
     missing_s2 = 0
     for s2_name in tqdm(df["s2v1_name"], desc="S2 folders", unit="patch"):
-        src = src_s2 / s2_name
+        src = source_patch_path(src_s2, s2_name, s2_grouping)
         dst = dst_s2 / s2_name
         if not src.exists():
             missing_s2 += 1
