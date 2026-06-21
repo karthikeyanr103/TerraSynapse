@@ -4,7 +4,9 @@ scripts/03_upload_kaggle_cli.py
 Run THIRD, on EC2, after 01_select_subset.py and
 02_copy_subset.py have completed.
 
-Uploads ~/ben_subset_data/ to Kaggle using Kaggle CLI commands.
+Creates a low-memory ZIP of ~/ben_subset_data/, then uploads that ZIP with the
+Kaggle CLI. The native zip process avoids Kaggle CLI directory archiving, which
+can exhaust memory on small EC2 instances.
 
 First upload:
     kaggle datasets create
@@ -27,6 +29,7 @@ Confirm the visibility manually after upload.
 import argparse
 import json
 import os
+import shutil
 import subprocess
 from pathlib import Path
 
@@ -72,7 +75,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def run_command(command):
+def run_command(command, cwd=None):
     """Run a shell command and stop if it fails."""
 
     print("\nRunning command:")
@@ -82,6 +85,7 @@ def run_command(command):
         command,
         check=True,
         text=True,
+        cwd=cwd,
     )
 
 
@@ -147,6 +151,45 @@ def create_or_update_metadata(local_dir, handle):
     return metadata_path
 
 
+def prepare_zip_upload(local_dir, metadata_path):
+    """Create one streaming ZIP and a flat directory for Kaggle upload."""
+    if shutil.which("zip") is None:
+        raise RuntimeError(
+            "The native zip command is required. Install it with: sudo apt install zip"
+        )
+
+    upload_dir = local_dir.parent / f"{local_dir.name}_kaggle_upload"
+    upload_dir.mkdir(parents=True, exist_ok=True)
+    archive_path = upload_dir / f"{local_dir.name}.zip"
+
+    if archive_path.exists():
+        print(f"\nRemoving previous archive: {archive_path}")
+        archive_path.unlink()
+
+    shutil.copy2(metadata_path, upload_dir / "dataset-metadata.json")
+
+    print(
+        f"\nCreating low-memory ZIP: {archive_path}\n"
+        "The archive contains the dataset contents directly, without an extra "
+        f"{local_dir.name}/ directory."
+    )
+    run_command(
+        [
+            "zip",
+            "-q",
+            "-r",
+            "-1",
+            str(archive_path),
+            ".",
+        ],
+        cwd=str(local_dir),
+    )
+
+    print("\nPrepared archive size:")
+    run_command(["du", "-sh", str(archive_path)])
+    return upload_dir, archive_path
+
+
 def main():
     args = parse_args()
 
@@ -198,6 +241,10 @@ def main():
 
     print(f"\nMetadata file created at: {metadata_path}")
 
+    upload_dir, archive_path = prepare_zip_upload(local_dir, metadata_path)
+    print(f"\nKaggle upload directory: {upload_dir}")
+    print(f"Kaggle archive file: {archive_path}")
+
     if kaggle_dataset_exists(args.handle):
         print(
             "\nThe Kaggle dataset already exists."
@@ -210,11 +257,11 @@ def main():
                 "datasets",
                 "version",
                 "-p",
-                str(local_dir),
+                str(upload_dir),
                 "-m",
                 args.version_notes,
                 "-r",
-                "zip",
+                "skip",
             ]
         )
 
@@ -232,9 +279,9 @@ def main():
                 "datasets",
                 "create",
                 "-p",
-                str(local_dir),
+                str(upload_dir),
                 "-r",
-                "zip",
+                "skip",
             ]
         )
 

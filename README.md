@@ -40,7 +40,8 @@ python3 ~/TerraSynapse/scripts/02_copy_subset.py \
     --src_s1 ./BigEarthNet-S1 \
     --src_s2 ./BigEarthNet-S2
 
-# Step 3: upload to Kaggle as a PRIVATE dataset
+# Step 3: create one low-memory ZIP and upload it as a PRIVATE dataset
+sudo apt-get install -y zip
 pip install --upgrade kaggle --quiet
 python3 ~/TerraSynapse/scripts/03_upload_kagglehub.py \
     --kaggle_username YOUR_USERNAME \
@@ -58,11 +59,13 @@ layout. The script stops before copying when the layout cannot be resolved and
 fails if any source patches are missing. Do not continue to Step 3 unless both
 reported staged-folder counts are nonzero and the missing-source counts are zero.
 
-The upload script passes `-r zip` to `kaggle datasets create/version` so the
-`BigEarthNet-S1` and `BigEarthNet-S2` directories are uploaded as ZIP archives
-instead of being skipped. With this Kaggle CLI, use `-r zip`; the long option
-`--dir-mode zip` is not supported. Do not add the directory option to `du` or
-`kaggle datasets init`.
+The upload script first uses the native `zip` program to stream all contents of
+`~/ben_subset_data` into `~/ben_subset_data_kaggle_upload/ben_subset_data.zip`.
+It then uploads that prebuilt file with Kaggle directory mode `skip`. This avoids
+the memory-heavy directory archiving inside Kaggle CLI. The ZIP contains
+`BigEarthNet-S1`, `BigEarthNet-S2`, and `ben_subset.csv` at its root, without an
+extra `ben_subset_data` directory. Keep at least 16 GB of free disk space while
+building the archive.
 
 **After this finishes:** open `https://www.kaggle.com/datasets/YOUR_USERNAME/bigearth-mm-subset-47k`
 and manually confirm the dataset is marked **Private** before continuing.
