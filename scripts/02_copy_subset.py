@@ -6,8 +6,8 @@ into a clean staging directory, ready to be zipped/uploaded to Kaggle.
 Usage:
     cd ~/BigEarthNet-MM
     python3 /path/to/scripts/02_copy_subset.py \
-        --src_s1 BigEarthNet-S1-v1.0 \
-        --src_s2 BigEarthNet-v1.0
+        --src_s1 BigEarthNet-S1 \
+        --src_s2 BigEarthNet-S2
 """
 
 import argparse
@@ -48,6 +48,31 @@ def parse_args():
     return parser.parse_args()
 
 
+def resolve_patch_root(source_root, first_patch_name, label):
+    """Return the directory that directly contains the requested patch folders."""
+    direct_patch = source_root / first_patch_name
+    if direct_patch.is_dir():
+        return source_root
+
+    print(
+        f"{label} patch {first_patch_name!r} is not directly inside {source_root}."
+        " Searching nested directories ..."
+    )
+    matches = (
+        path for path in source_root.rglob(first_patch_name) if path.is_dir()
+    )
+    first_match = next(matches, None)
+    if first_match is None:
+        raise FileNotFoundError(
+            f"Could not find {label} patch folder {first_patch_name!r} anywhere "
+            f"under {source_root}. Check the manifest and extracted dataset."
+        )
+
+    resolved_root = first_match.parent
+    print(f"Resolved {label} patch root: {resolved_root}")
+    return resolved_root
+
+
 def main():
     args = parse_args()
     src_s1 = args.src_s1.expanduser().resolve()
@@ -70,6 +95,17 @@ def main():
     dst_s2.mkdir(parents=True, exist_ok=True)
 
     df = pd.read_csv(manifest)
+    required_columns = {"s1_name", "s2v1_name"}
+    missing_columns = required_columns.difference(df.columns)
+    if missing_columns:
+        raise ValueError(
+            f"Manifest is missing required columns: {sorted(missing_columns)}"
+        )
+    if df.empty:
+        raise ValueError(f"Manifest contains no rows: {manifest}")
+
+    src_s1 = resolve_patch_root(src_s1, str(df.iloc[0]["s1_name"]), "S1")
+    src_s2 = resolve_patch_root(src_s2, str(df.iloc[0]["s2v1_name"]), "S2")
 
     print(f"Copying {len(df)} SAR (S1) folders ...")
     missing_s1 = 0

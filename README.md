@@ -50,12 +50,12 @@ python3 ~/TerraSynapse/scripts/03_upload_kagglehub.py \
     --version_notes "Initial 47K balanced subset"
 ```
 
-`--src_s1` and `--src_s2` must point to the extracted directories that directly
-contain the patch folders. If your extracted directory names differ, locate them
-with `find . -maxdepth 3 -type d -name 'BigEarthNet*'` and pass those paths. The
-copy script uses `s1_name` and `s2v1_name` from `ben_subset.csv` and stops with an
-error if any source patches are missing. Do not continue to Step 3 unless both
-reported staged-folder counts are nonzero and the missing-source counts are zero.
+`--src_s1` and `--src_s2` point to the extracted dataset directories. The script
+uses the first `s1_name` and `s2v1_name` in `ben_subset.csv` to locate the direct
+patch root when the archive has an extra nested directory. It stops before copying
+if no matching patch folder can be found, and it also fails if any source patches
+are missing. Do not continue to Step 3 unless both reported staged-folder counts
+are nonzero and the missing-source counts are zero.
 
 The upload script passes `-r zip` to `kaggle datasets create/version` so the
 `BigEarthNet-S1` and `BigEarthNet-S2` directories are uploaded as ZIP archives
