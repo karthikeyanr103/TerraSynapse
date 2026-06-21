@@ -123,6 +123,7 @@ def create_or_update_metadata(local_dir, handle):
                 "init",
                 "-p",
                 str(local_dir),
+                '--dir-mode'
             ]
         )
 
