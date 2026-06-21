@@ -36,7 +36,9 @@ cd ~/BigEarthNet-MM
 python3 ~/TerraSynapse/scripts/01_select_subset.py
 
 # Step 2: copy only those patch folders into a clean staging dir
-python3 ~/TerraSynapse/scripts/02_copy_subset.py
+python3 ~/TerraSynapse/scripts/02_copy_subset.py \
+    --src_s1 ./BigEarthNet-S1 \
+    --src_s2 ./BigEarthNet-S2
 
 # Step 3: upload to Kaggle as a PRIVATE dataset
 pip install --upgrade kaggle --quiet
@@ -47,6 +49,13 @@ python3 ~/TerraSynapse/scripts/03_upload_kagglehub.py \
     --local_dir ~/ben_subset_data \
     --version_notes "Initial 47K balanced subset"
 ```
+
+`--src_s1` and `--src_s2` must point to the extracted directories that directly
+contain the patch folders. If your extracted directory names differ, locate them
+with `find . -maxdepth 3 -type d -name 'BigEarthNet*'` and pass those paths. The
+copy script uses `s1_name` and `s2v1_name` from `ben_subset.csv` and stops with an
+error if any source patches are missing. Do not continue to Step 3 unless both
+reported staged-folder counts are nonzero and the missing-source counts are zero.
 
 The upload script passes `-r zip` to `kaggle datasets create/version` so the
 `BigEarthNet-S1` and `BigEarthNet-S2` directories are uploaded as ZIP archives
