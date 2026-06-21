@@ -16,7 +16,7 @@ if ENV == "ec2":
     DATA_ROOT  = Path.home() / "ben_subset_data"
     OUTPUT_DIR = Path.home() / "TerraSynapse_outputs"
 elif ENV == "kaggle":
-    DATA_ROOT  = Path("/kaggle/input/bigearth-mm-subset-47k")
+    DATA_ROOT  = Path("/kaggle/input/datasets/glitchr/bigearth-mm-subset-47k")
     OUTPUT_DIR = Path("/kaggle/working/outputs")
 else:
     DATA_ROOT = Path(__file__).resolve().parents[1] / "deploy" / "artifacts"
