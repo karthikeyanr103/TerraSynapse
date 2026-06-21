@@ -24,13 +24,13 @@ def parse_args():
     parser.add_argument(
         "--src_s1",
         type=Path,
-        default=Path("BigEarthNet-S1-v1.0"),
+        default=Path("~/BigEarthNet-MM/BigEarthNet-S1"),
         help="Directory containing the S1 patch folders",
     )
     parser.add_argument(
         "--src_s2",
         type=Path,
-        default=Path("BigEarthNet-v1.0"),
+        default=Path("~/BigEarthNet-MM/BigEarthNet-S2"),
         help="Directory containing the S2 v1 patch folders",
     )
     parser.add_argument(
