@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+outputs/
+deploy/artifacts/
+!deploy/artifacts/.gitkeep
+*.tif
+*.jpg
+*.png
+!notebooks/*.png
+.ipynb_checkpoints/
+kaggle.json
+.env
+.zip
