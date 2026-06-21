@@ -189,7 +189,6 @@ def main():
             "du",
             "-sh",
             str(local_dir),
-            '--dir-mode zip'
         ]
     )
 
