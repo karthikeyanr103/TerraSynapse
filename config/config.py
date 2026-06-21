@@ -36,8 +36,9 @@ for d in [OUTPUT_DIR, CKPT_DIR, PLOTS_DIR, RESULTS_DIR]:
 # PRETRAINED BACKBONE REGISTRY  (configilm / BigEarthNet v2.0 weights)
 # ════════════════════════════════════════════════════════════════════════
 # These are loaded via:
-#   from reben_publication.BigEarthNetv2_0_ImageClassifier import BigEarthNetv2_0_ImageClassifier
-#   model = BigEarthNetv2_0_ImageClassifier.from_pretrained("<hf_repo_id>")
+#   configilm.ConfigILM.ConfigILM + the config.json/model.safetensors files
+#   downloaded from each Hugging Face repository. The reBEN Lightning wrapper
+#   is not required.
 #
 # IMPORTANT: verify the exact repo id strings on the model hub before running —
 # https://huggingface.co/BIFOLD-BigEarthNetv2-0

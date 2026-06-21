@@ -85,6 +85,19 @@ the projection heads (fast — backbone stays frozen by default), save
 `best_model.pt`. Commit the notebook so its Output (the checkpoint) becomes
 available to Notebook 3.
 
+Before training, smoke-test direct ConfigILM loading for both pretrained models:
+
+```bash
+python3 scripts/05_test_configilm_loader.py \
+    --model_id BIFOLD-BigEarthNetv2-0/resnet50-s1-v0.2.0
+python3 scripts/05_test_configilm_loader.py \
+    --model_id BIFOLD-BigEarthNetv2-0/resnet50-s2-v0.2.0
+```
+
+Each command downloads `config.json` and `model.safetensors` from Hugging Face,
+constructs ConfigILM without importing `reben_publication`, loads all weights
+strictly, and checks a random inference batch.
+
 To try a different backbone (ResNet101, ViT, ConvNeXt, ...): edit
 `BACKBONE_KEY_S1` / `BACKBONE_KEY_S2` in `config/config.py`, push to GitHub,
 re-run from Cell 1 of Notebook 2. Everything downstream picks it up automatically.
