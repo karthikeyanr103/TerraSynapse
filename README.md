@@ -39,7 +39,7 @@ python3 ~/TerraSynapse/scripts/01_select_subset.py
 python3 ~/TerraSynapse/scripts/02_copy_subset.py
 
 # Step 3: upload to Kaggle as a PRIVATE dataset
-pip install kagglehub --quiet
+pip install --upgrade kaggle --quiet
 python3 ~/TerraSynapse/scripts/03_upload_kagglehub.py \
     --kaggle_username YOUR_USERNAME \
     --kaggle_key YOUR_API_KEY \
@@ -47,6 +47,12 @@ python3 ~/TerraSynapse/scripts/03_upload_kagglehub.py \
     --local_dir ~/ben_subset_data \
     --version_notes "Initial 47K balanced subset"
 ```
+
+The upload script passes `-r zip` to `kaggle datasets create/version` so the
+`BigEarthNet-S1` and `BigEarthNet-S2` directories are uploaded as ZIP archives
+instead of being skipped. With this Kaggle CLI, use `-r zip`; the long option
+`--dir-mode zip` is not supported. Do not add the directory option to `du` or
+`kaggle datasets init`.
 
 **After this finishes:** open `https://www.kaggle.com/datasets/YOUR_USERNAME/bigearth-mm-subset-47k`
 and manually confirm the dataset is marked **Private** before continuing.
