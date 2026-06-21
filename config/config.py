@@ -14,7 +14,7 @@ ENV = os.getenv("BEN_ENV", "kaggle")
 
 if ENV == "ec2":
     DATA_ROOT  = Path.home() / "ben_subset_data"
-    OUTPUT_DIR = Path.home() / "ben_retrieval_outputs"
+    OUTPUT_DIR = Path.home() / "TerraSynapse_outputs"
 elif ENV == "kaggle":
     DATA_ROOT  = Path("/kaggle/input/bigearth-mm-subset-47k")
     OUTPUT_DIR = Path("/kaggle/working/outputs")

@@ -69,7 +69,7 @@ between geographically adjacent patches). Expected output: ~47,498 patches
 ## SECTION 3 — REPOSITORY STRUCTURE (build exactly this)
 
 ```
-ben_retrieval/
+TerraSynapse/
 ├── README.md
 ├── requirements.txt
 ├── .gitignore                      # exclude kaggle.json, outputs/, __pycache__, raw rasters
@@ -261,7 +261,7 @@ time (ms/query) per direction, via FAISS `IndexFlatIP` on L2-normalized embeddin
 
 ```bash
 # One-time: push repo
-cd ben_retrieval && git init && git add . && git commit -m "init"
+cd TerraSynapse && git init && git add . && git commit -m "init"
 git remote add origin https://github.com/<USER>/<REPO>.git && git push -u origin main
 
 # On EC2: build + upload subset

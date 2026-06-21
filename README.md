@@ -8,7 +8,7 @@ End-to-end three-modality pipeline: AWS EC2 data prep -> GitHub -> Kaggle train/
 
 ### 0.1 Push this code to GitHub (from EC2 or your laptop)
 ```bash
-cd ben_retrieval
+cd TerraSynapse
 git init
 git add .
 git commit -m "Initial cross-modal retrieval pipeline"
@@ -33,14 +33,14 @@ this file to GitHub (it's already in `.gitignore`).
 cd ~/BigEarthNet-MM
 
 # Step 1: build the 47K-patch manifest (progress bars included)
-python3 ~/ben_retrieval/scripts/01_select_subset.py
+python3 ~/TerraSynapse/scripts/01_select_subset.py
 
 # Step 2: copy only those patch folders into a clean staging dir
-python3 ~/ben_retrieval/scripts/02_copy_subset.py
+python3 ~/TerraSynapse/scripts/02_copy_subset.py
 
 # Step 3: upload to Kaggle as a PRIVATE dataset
 pip install kagglehub --quiet
-python3 ~/ben_retrieval/scripts/03_upload_kagglehub.py \
+python3 ~/TerraSynapse/scripts/03_upload_kagglehub.py \
     --kaggle_username YOUR_USERNAME \
     --kaggle_key YOUR_API_KEY \
     --handle YOUR_USERNAME/bigearth-mm-subset-47k \
