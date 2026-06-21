@@ -52,7 +52,7 @@ python3 ~/TerraSynapse/scripts/03_upload_kagglehub.py \
 
 `--src_s1` and `--src_s2` point to the extracted dataset directories. BigEarthNet
 stores patches as `<dataset>/<acquisition>/<patch>`; the script detects this grouped
-layout from the first `s1_name` and `s2v1_name` in `ben_subset.csv` and derives the
+layout from the first `s1_name` and `patch_id` in `ben_subset.csv` and derives the
 acquisition directory for every patch. It also supports a flat `<dataset>/<patch>`
 layout. The script stops before copying when the layout cannot be resolved and
 fails if any source patches are missing. Do not continue to Step 3 unless both

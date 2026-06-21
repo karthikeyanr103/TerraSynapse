@@ -102,7 +102,7 @@ def main():
     dst_s2.mkdir(parents=True, exist_ok=True)
 
     df = pd.read_csv(manifest)
-    required_columns = {"s1_name", "s2v1_name"}
+    required_columns = {"s1_name", "patch_id"}
     missing_columns = required_columns.difference(df.columns)
     if missing_columns:
         raise ValueError(
@@ -115,7 +115,7 @@ def main():
         src_s1, str(df.iloc[0]["s1_name"]), "S1"
     )
     s2_grouping = detect_grouping_depth(
-        src_s2, str(df.iloc[0]["s2v1_name"]), "S2"
+        src_s2, str(df.iloc[0]["patch_id"]), "S2"
     )
 
     print(f"Copying {len(df)} SAR (S1) folders ...")
@@ -131,9 +131,9 @@ def main():
 
     print(f"\nCopying {len(df)} Multispectral (S2) folders ...")
     missing_s2 = 0
-    for s2_name in tqdm(df["s2v1_name"], desc="S2 folders", unit="patch"):
-        src = source_patch_path(src_s2, s2_name, s2_grouping)
-        dst = dst_s2 / s2_name
+    for patch_id in tqdm(df["patch_id"], desc="S2 folders", unit="patch"):
+        src = source_patch_path(src_s2, patch_id, s2_grouping)
+        dst = dst_s2 / patch_id
         if not src.exists():
             missing_s2 += 1
             continue
