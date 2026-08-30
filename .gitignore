@@ -16,6 +16,30 @@ env/
 # Jupyter
 .ipynb_checkpoints/
 
+# Prompt, AI, and draft artifacts
+prompts/
+prompt/
+*PROMPT*.md
+CODEX_PROMPT*.md
+*.prompt
+*.prompt.md
+*_prompt.md
+*-prompt.md
+PROMPT.md
+PROMPTS.md
+ai-notes/
+assistant-notes/
+codex-notes/
+chatgpt-notes/
+conversation/
+conversations/
+transcripts/
+LINKEDIN_POST.md
+linkedin-post*.md
+linkedin*.md
+social-post*.md
+post-draft*.md
+
 # Local datasets and model artifacts
 data/raw/
 data/processed/
@@ -45,6 +69,25 @@ desktop.ini
 
 # Codex/Graphify local outputs
 .agents/
+.codex/
+AGENTS.md
 graphify-out/
 .codex/logs/
+.codex/tmp/
+.codex/cache/
+.codex/sessions/
+
+# Local cleanup/archive material
+archive/
+assets/
+config/
+data/
+deploy/
+evaluation/
+models/
+scripts/
+training/
+utils/
+requirements.txt
+*.zip
 
