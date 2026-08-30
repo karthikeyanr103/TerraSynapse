@@ -49,7 +49,7 @@ Result tables:
 - [Problem statement](submission/problem-statement-cross-modal-satellite-retrieval.pdf)
 - [Dataset reference](submission/dataset-reference.pdf)
 
-## Certificate
+## Certificates
 
 <!-- <img src="certificates/isro-bah-2026-certificate.png" alt="ISRO BAH 2026 participation certificate" width="900">
 -->
