@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local datasets and model artifacts
+data/raw/
+data/processed/
+data/external/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.npy
+*.npz
+*.tif
+*.tiff
+*.zip
+
+# Credentials
+kaggle.json
+credentials.json
+secrets.json
+
+# OS and editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+.$*.bkp
+
+# Codex/Graphify local outputs
+.agents/
+graphify-out/
+.codex/logs/
+

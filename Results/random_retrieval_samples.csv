@@ -1,0 +1,41 @@
+direction,task,query_index,query_modality,gallery_modality,rank,gallery_index,query_label,gallery_label,score,relevant,result
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,1,3203,Residential,Residential,0.9999408721923828,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,2,3630,Residential,Residential,0.9999352693557739,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,3,318,Residential,Residential,0.9999268054962158,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,4,2896,Residential,Residential,0.9999212622642517,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,5,3984,Residential,Residential,0.9998921155929565,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,6,3980,Residential,Residential,0.9998874068260193,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,7,1015,Residential,Residential,0.9998836517333984,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,8,2175,Residential,Residential,0.9998778700828552,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,9,563,Residential,Residential,0.9998778104782104,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,10,2661,Residential,Residential,0.9998763203620911,1,Correct
+SAR_to_SAR,SAR → SAR Retrieval,3507,SAR,SAR,1,951,Highway,Highway,0.9968661069869995,1,Correct
+SAR_to_SAR,SAR → SAR Retrieval,3507,SAR,SAR,2,700,Highway,Highway,0.9964136481285095,1,Correct
+SAR_to_SAR,SAR → SAR Retrieval,3507,SAR,SAR,3,1564,Highway,Highway,0.996036946773529,1,Correct
+SAR_to_SAR,SAR → SAR Retrieval,3507,SAR,SAR,4,120,Highway,Highway,0.9955458641052246,1,Correct
+SAR_to_SAR,SAR → SAR Retrieval,3507,SAR,SAR,5,1390,Highway,Highway,0.9950177669525146,1,Correct
+SAR_to_SAR,SAR → SAR Retrieval,3507,SAR,SAR,6,5,Highway,Highway,0.9948846697807312,1,Correct
+SAR_to_SAR,SAR → SAR Retrieval,3507,SAR,SAR,7,1035,Highway,Highway,0.9941471219062805,1,Correct
+SAR_to_SAR,SAR → SAR Retrieval,3507,SAR,SAR,8,2898,Highway,Highway,0.9936128854751587,1,Correct
+SAR_to_SAR,SAR → SAR Retrieval,3507,SAR,SAR,9,2813,Highway,Highway,0.9935688972473145,1,Correct
+SAR_to_SAR,SAR → SAR Retrieval,3507,SAR,SAR,10,2366,Highway,Highway,0.9932305216789246,1,Correct
+Optical_to_SAR,Optical → SAR Cross-Modal Retrieval,860,Optical,SAR,1,2378,PermanentCrop,PermanentCrop,0.9889500141143799,1,Correct
+Optical_to_SAR,Optical → SAR Cross-Modal Retrieval,860,Optical,SAR,2,3255,PermanentCrop,PermanentCrop,0.9880860447883606,1,Correct
+Optical_to_SAR,Optical → SAR Cross-Modal Retrieval,860,Optical,SAR,3,873,PermanentCrop,PermanentCrop,0.9868251085281372,1,Correct
+Optical_to_SAR,Optical → SAR Cross-Modal Retrieval,860,Optical,SAR,4,168,PermanentCrop,PermanentCrop,0.9846011400222778,1,Correct
+Optical_to_SAR,Optical → SAR Cross-Modal Retrieval,860,Optical,SAR,5,1821,PermanentCrop,PermanentCrop,0.9830303192138672,1,Correct
+Optical_to_SAR,Optical → SAR Cross-Modal Retrieval,860,Optical,SAR,6,2464,PermanentCrop,PermanentCrop,0.9802488684654236,1,Correct
+Optical_to_SAR,Optical → SAR Cross-Modal Retrieval,860,Optical,SAR,7,1769,PermanentCrop,PermanentCrop,0.9772604703903198,1,Correct
+Optical_to_SAR,Optical → SAR Cross-Modal Retrieval,860,Optical,SAR,8,3111,PermanentCrop,Pasture,0.9724002480506897,0,Wrong
+Optical_to_SAR,Optical → SAR Cross-Modal Retrieval,860,Optical,SAR,9,1997,PermanentCrop,PermanentCrop,0.9716371297836304,1,Correct
+Optical_to_SAR,Optical → SAR Cross-Modal Retrieval,860,Optical,SAR,10,885,PermanentCrop,PermanentCrop,0.9701513648033142,1,Correct
+SAR_to_Optical,SAR → Optical Cross-Modal Retrieval,1294,SAR,Optical,1,1304,River,River,0.9832075834274292,1,Correct
+SAR_to_Optical,SAR → Optical Cross-Modal Retrieval,1294,SAR,Optical,2,2076,River,River,0.9784961938858032,1,Correct
+SAR_to_Optical,SAR → Optical Cross-Modal Retrieval,1294,SAR,Optical,3,2712,River,River,0.9758913516998291,1,Correct
+SAR_to_Optical,SAR → Optical Cross-Modal Retrieval,1294,SAR,Optical,4,551,River,River,0.9738774299621582,1,Correct
+SAR_to_Optical,SAR → Optical Cross-Modal Retrieval,1294,SAR,Optical,5,3189,River,River,0.9692217707633972,1,Correct
+SAR_to_Optical,SAR → Optical Cross-Modal Retrieval,1294,SAR,Optical,6,1395,River,River,0.9688448309898376,1,Correct
+SAR_to_Optical,SAR → Optical Cross-Modal Retrieval,1294,SAR,Optical,7,262,River,River,0.9675807952880859,1,Correct
+SAR_to_Optical,SAR → Optical Cross-Modal Retrieval,1294,SAR,Optical,8,3133,River,River,0.9674587249755859,1,Correct
+SAR_to_Optical,SAR → Optical Cross-Modal Retrieval,1294,SAR,Optical,9,2794,River,River,0.9659015536308289,1,Correct
+SAR_to_Optical,SAR → Optical Cross-Modal Retrieval,1294,SAR,Optical,10,3913,River,River,0.9652016758918762,1,Correct

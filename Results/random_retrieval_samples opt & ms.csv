@@ -1,0 +1,41 @@
+direction,task,query_index,query_modality,gallery_modality,rank,gallery_index,query_label,gallery_label,score,relevant,result
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,1,2767,Residential,Residential,0.9997337460517883,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,2,1709,Residential,Residential,0.9997184872627258,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,3,2330,Residential,Residential,0.999678373336792,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,4,630,Residential,Residential,0.9996744394302368,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,5,2785,Residential,Residential,0.9996717572212219,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,6,99,Residential,Residential,0.9996374845504761,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,7,3942,Residential,Residential,0.9996365904808044,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,8,2382,Residential,Residential,0.9996201395988464,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,9,2359,Residential,Residential,0.9996116161346436,1,Correct
+Optical_to_Optical,Optical → Optical Retrieval,3174,Optical,Optical,10,3145,Residential,Residential,0.9996113181114197,1,Correct
+Multispectral_to_Multispectral,Multispectral → Multispectral Retrieval,3507,Multispectral,Multispectral,1,170,Highway,River,0.994977593421936,0,Wrong
+Multispectral_to_Multispectral,Multispectral → Multispectral Retrieval,3507,Multispectral,Multispectral,2,1215,Highway,Highway,0.9923891425132751,1,Correct
+Multispectral_to_Multispectral,Multispectral → Multispectral Retrieval,3507,Multispectral,Multispectral,3,3731,Highway,Highway,0.9913263916969299,1,Correct
+Multispectral_to_Multispectral,Multispectral → Multispectral Retrieval,3507,Multispectral,Multispectral,4,2307,Highway,Highway,0.9899312853813171,1,Correct
+Multispectral_to_Multispectral,Multispectral → Multispectral Retrieval,3507,Multispectral,Multispectral,5,3009,Highway,Highway,0.9897319078445435,1,Correct
+Multispectral_to_Multispectral,Multispectral → Multispectral Retrieval,3507,Multispectral,Multispectral,6,1835,Highway,Highway,0.9892577528953552,1,Correct
+Multispectral_to_Multispectral,Multispectral → Multispectral Retrieval,3507,Multispectral,Multispectral,7,3620,Highway,Highway,0.9850501418113708,1,Correct
+Multispectral_to_Multispectral,Multispectral → Multispectral Retrieval,3507,Multispectral,Multispectral,8,2754,Highway,Highway,0.9846106171607971,1,Correct
+Multispectral_to_Multispectral,Multispectral → Multispectral Retrieval,3507,Multispectral,Multispectral,9,1998,Highway,Highway,0.9842483401298523,1,Correct
+Multispectral_to_Multispectral,Multispectral → Multispectral Retrieval,3507,Multispectral,Multispectral,10,3154,Highway,Highway,0.9828630089759827,1,Correct
+Optical_to_Multispectral,Optical → Multispectral Cross-Modal Retrieval,860,Optical,Multispectral,1,161,PermanentCrop,PermanentCrop,0.9974509477615356,1,Correct
+Optical_to_Multispectral,Optical → Multispectral Cross-Modal Retrieval,860,Optical,Multispectral,2,3006,PermanentCrop,PermanentCrop,0.9966480731964111,1,Correct
+Optical_to_Multispectral,Optical → Multispectral Cross-Modal Retrieval,860,Optical,Multispectral,3,736,PermanentCrop,PermanentCrop,0.9965946078300476,1,Correct
+Optical_to_Multispectral,Optical → Multispectral Cross-Modal Retrieval,860,Optical,Multispectral,4,1363,PermanentCrop,PermanentCrop,0.9965460896492004,1,Correct
+Optical_to_Multispectral,Optical → Multispectral Cross-Modal Retrieval,860,Optical,Multispectral,5,1834,PermanentCrop,PermanentCrop,0.9964885711669922,1,Correct
+Optical_to_Multispectral,Optical → Multispectral Cross-Modal Retrieval,860,Optical,Multispectral,6,3595,PermanentCrop,PermanentCrop,0.9964251518249512,1,Correct
+Optical_to_Multispectral,Optical → Multispectral Cross-Modal Retrieval,860,Optical,Multispectral,7,1883,PermanentCrop,PermanentCrop,0.9963411092758179,1,Correct
+Optical_to_Multispectral,Optical → Multispectral Cross-Modal Retrieval,860,Optical,Multispectral,8,1866,PermanentCrop,PermanentCrop,0.9962839484214783,1,Correct
+Optical_to_Multispectral,Optical → Multispectral Cross-Modal Retrieval,860,Optical,Multispectral,9,476,PermanentCrop,PermanentCrop,0.9958893060684204,1,Correct
+Optical_to_Multispectral,Optical → Multispectral Cross-Modal Retrieval,860,Optical,Multispectral,10,2830,PermanentCrop,PermanentCrop,0.9958720803260803,1,Correct
+Multispectral_to_Optical,Multispectral → Optical Cross-Modal Retrieval,1294,Multispectral,Optical,1,2390,River,River,0.9946210980415344,1,Correct
+Multispectral_to_Optical,Multispectral → Optical Cross-Modal Retrieval,1294,Multispectral,Optical,2,2383,River,River,0.9945784211158752,1,Correct
+Multispectral_to_Optical,Multispectral → Optical Cross-Modal Retrieval,1294,Multispectral,Optical,3,3852,River,River,0.9943466782569885,1,Correct
+Multispectral_to_Optical,Multispectral → Optical Cross-Modal Retrieval,1294,Multispectral,Optical,4,2749,River,River,0.994201123714447,1,Correct
+Multispectral_to_Optical,Multispectral → Optical Cross-Modal Retrieval,1294,Multispectral,Optical,5,182,River,River,0.9940271377563477,1,Correct
+Multispectral_to_Optical,Multispectral → Optical Cross-Modal Retrieval,1294,Multispectral,Optical,6,568,River,River,0.9938499331474304,1,Correct
+Multispectral_to_Optical,Multispectral → Optical Cross-Modal Retrieval,1294,Multispectral,Optical,7,3994,River,River,0.993577778339386,1,Correct
+Multispectral_to_Optical,Multispectral → Optical Cross-Modal Retrieval,1294,Multispectral,Optical,8,74,River,River,0.9933944940567017,1,Correct
+Multispectral_to_Optical,Multispectral → Optical Cross-Modal Retrieval,1294,Multispectral,Optical,9,2617,River,River,0.9932482838630676,1,Correct
+Multispectral_to_Optical,Multispectral → Optical Cross-Modal Retrieval,1294,Multispectral,Optical,10,2970,River,River,0.9930004477500916,1,Correct
