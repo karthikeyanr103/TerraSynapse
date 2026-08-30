@@ -62,7 +62,6 @@ def load_optical_rgb(patch_id: str) -> torch.Tensor:
     std = np.array([0.229, 0.224, 0.225], dtype=np.float32)[:, None, None]
     return torch.from_numpy((rgb - mean) / std)
 
-
 def load_ms_rgb_preview(patch_id: str) -> np.ndarray:
     """
     Load only B04/B03/B02 and return an (H, W, 3) uint8 array for quick
@@ -79,7 +78,6 @@ def load_ms_rgb_preview(patch_id: str) -> np.ndarray:
     lo, hi = np.percentile(rgb, 2), np.percentile(rgb, 98)
     rgb = np.clip((rgb - lo) / (hi - lo + 1e-6), 0, 1)
     return (rgb * 255).astype(np.uint8)
-
 
 def compute_ms_stats(patch_ids, sample_size=2000, seed=0):
     """
