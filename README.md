@@ -16,7 +16,7 @@ TerraSynapse learns a shared embedding space for SAR, optical, and multispectral
 
 **Model blocks**
 
-<img src="architecture/architecture-blocks.drawio.png" alt="TerraSynapse model architecture blocks" width="900">
+<img src="architecture/Architecture-Blocks.drawio.png" alt="TerraSynapse model architecture blocks" width="900">
 
 **Image encoder**
 
