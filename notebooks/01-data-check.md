@@ -1,4 +1,4 @@
-# notebooks/01_data_check.md
+# notebooks/01-data-check.md
 ## Kaggle Notebook 1 — Data Check & Sanity Visualization
 
 Create a new Kaggle notebook named `01-data-check`. Attach your private
