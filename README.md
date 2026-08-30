@@ -67,13 +67,6 @@ TerraSynapse/
 |-- archive/        # Local drafts and source-code archive
 `-- README.md
 ```
-
-## Team
-
-- [Your Name]() - Project lead, model design
-- [Teammate Name](https://github.com/their-username) - Retrieval experiments
-- [Teammate Name]() - Documentation and presentation
-
 ## Team
 
 Built by Team EuroData for ISRO BAH 2026.
