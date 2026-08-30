@@ -67,3 +67,9 @@ TerraSynapse/
 |-- archive/        # Local drafts and source-code archive
 `-- README.md
 ```
+
+## Team
+
+- [Your Name](https://github.com/karthikeyanr103) - Project lead, model design
+- [Teammate Name](https://github.com/their-username) - Retrieval experiments
+- [Teammate Name](https://github.com/Hamdan-Musharraf) - Documentation and presentation
