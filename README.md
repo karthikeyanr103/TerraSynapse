@@ -70,6 +70,17 @@ TerraSynapse/
 
 ## Team
 
-- [Your Name](https://github.com/karthikeyanr103) - Project lead, model design
+- [Your Name]() - Project lead, model design
 - [Teammate Name](https://github.com/their-username) - Retrieval experiments
-- [Teammate Name](https://github.com/Hamdan-Musharraf) - Documentation and presentation
+- [Teammate Name]() - Documentation and presentation
+
+## Team
+
+Built by Team EuroData for ISRO BAH 2026.
+
+| Member | Role |
+|---|---|
+| [Karthikeyan Ramadoss](https://github.com/karthikeyanr103) | Model architecture, retrieval pipeline, evaluation |
+| [Rebecca John](https://github.com/member-2-username) | Data preprocessing and experiments |
+| [Bharath Ilayaperumal](https://github.com/member-3-username) | Training workflows and analysis |
+| [Musharraf Hamdan](https://github.com/Hamdan-Musharraf) | Report, presentation, and validation |
