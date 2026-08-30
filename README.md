@@ -51,7 +51,28 @@ Result tables:
 
 ## Certificate
 
-<img src="certificates/isro-bah-2026-certificate.png" alt="ISRO BAH 2026 participation certificate" width="900">
+<!-- <img src="certificates/isro-bah-2026-certificate.png" alt="ISRO BAH 2026 participation certificate" width="900">
+-->
+<table>
+  <tr>
+    <td>
+      <p align="center"><b>Karthikeyan</b></p>
+      <img src="certificates/isro-bah-2026-certificate.png" width="400" alt="Certificate 1">
+    </td>
+    <td>
+      <p align="center"><b>Rebecca</b></p>
+      <img src="certificates/isro-bah-2026-certificate.png" width="400" alt="Certificate 2">
+    </td>
+    <td>
+      <p align="center"><b>Bharath</b></p>
+      <img src="certificates/isro-bah-2026-certificate.png" width="400" alt="Certificate 2">
+    </td>
+      <td>
+      <p align="center"><b>Musharraf</b></p>
+      <img src="certificates/isro-bah-2026-certificate.png" width="400" alt="Certificate 2">
+    </td>
+  </tr>
+</table>
 
 [Certificate PDF](certificates/isro-bah-2026-certificate.pdf)
 
