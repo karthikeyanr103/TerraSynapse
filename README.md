@@ -74,10 +74,13 @@ Result tables:
   </tr>
 </table>
 
-[Leader - Certificate PDF](certificates/2026H2S06BAH-P19493-Karthikeyan.pdf)
-[Member 1 - Certificate PDF](certificates/2026H2S06BAH-P19493-Karthikeyan.pdf)
-[Member 2 - Certificate PDF](certificates/2026H2S06BAH-P19493-Karthikeyan.pdf)
-[Member 3 - Certificate PDF](certificates/2026H2S06BAH-P19494-Musharraf.pdf)
+* [Leader - Certificate PDF](certificates/2026H2S06BAH-P19493-Karthikeyan.pdf)
+
+* [Member 1 - Certificate PDF](certificates/2026H2S06BAH-P19493-Karthikeyan.pdf)
+
+* [Member 2 - Certificate PDF](certificates/2026H2S06BAH-P19493-Karthikeyan.pdf)
+
+* [Member 3 - Certificate PDF](certificates/2026H2S06BAH-P19494-Musharraf.pdf)
 
 ## Repository Structure
 
