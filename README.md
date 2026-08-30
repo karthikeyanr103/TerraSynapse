@@ -65,7 +65,7 @@ Result tables:
     </td>
     <td>
       <p align="center"><b>Bharath</b></p>
-      <img src="certificates/isro-bah-2026-certificate.png" width="400" alt="Certificate 2">
+      <img src="certificates/2026H2S06BAH-P19496-Bharath_page-0001.jpg" width="400" alt="Certificate 2">
     </td>
       <td>
       <p align="center"><b>Musharraf</b></p>
@@ -78,7 +78,7 @@ Result tables:
 
 * [Member 1 - Certificate PDF](certificates/2026H2S06BAH-P19493-Karthikeyan.pdf)
 
-* [Member 2 - Certificate PDF](certificates/2026H2S06BAH-P19493-Karthikeyan.pdf)
+* [Member 2 - Certificate PDF](certificates/2026H2S06BAH-P19496-Bharath.pdf)
 
 * [Member 3 - Certificate PDF](certificates/2026H2S06BAH-P19494-Musharraf.pdf)
 
@@ -102,5 +102,5 @@ Built by Team EuroData for ISRO BAH 2026.
 |---|---|
 | [Karthikeyan Ramadoss](https://github.com/karthikeyanr103) | Model architecture, retrieval pipeline, evaluation |
 | [Rebecca John](https://github.com/member-2-username) | Data preprocessing and experiments |
-| [Bharath Ilayaperumal](https://github.com/member-3-username) | Training workflows and analysis |
+| [Bharath Ilayaperumal](https://github.com/BharathIlaya) | Training workflows and analysis |
 | [Musharraf Hamdan](https://github.com/Hamdan-Musharraf) | Report, presentation, and validation |
