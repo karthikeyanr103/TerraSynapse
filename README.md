@@ -104,3 +104,7 @@ Built by Team EuroData for ISRO BAH 2026.
 | [Rebecca John](https://github.com/Rebeccajohn17) | Data preprocessing and experiments |
 | [Bharath Ilayaperumal](https://github.com/BharathIlaya) | Training workflows and analysis |
 | [Musharraf Hamdan](https://github.com/Hamdan-Musharraf) | Report, presentation, and validation |
+
+<a href="https://github.com/karthikeyanr103/TerraSynapse/graphs/contributors">
+ <img src="https://contrib.rocks/image?repo=karthikeyanr103/TerraSynapse" />
+</a>
